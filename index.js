@@ -14,22 +14,5 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-const User = require("./src/models/user");
-
-app.get("/",function (req,res){
-    res.render("home");
-})
-
-app.get("/user-list", (req,res) => {
-    User.find({}).then(rs=>{
-        res.render("userList",{
-            item: rs
-        });
-    }).catch(err=>{
-        res.send(err);
-    });
-})
-
-app.get("add",(req,res) => {
-    res.render("add");
-})
+const userRouter = require("./src/routes/user.route");
+app.use("/",userRouter);

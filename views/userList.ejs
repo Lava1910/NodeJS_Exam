@@ -23,6 +23,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="user-list">All Users List</a>
                 </li>
+                </ul>
                 </form>
             </div>
             </div>
@@ -46,8 +47,8 @@
                         <th scope="row"><%= key +1 %></th>
                         <td><%= item.FirstName %></td>
                         <td><%= item.LastName %></td>
-                        <td>@<%= item.MobileNumber %></td>
-                        <td>@<%= item.UserName %></td>
+                        <td><%= item.MobileNumber %></td>
+                        <td><%= item.UserName %></td>
                     </tr>
                 <% }) %>
                 </tbody>
